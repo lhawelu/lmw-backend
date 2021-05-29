@@ -7,11 +7,9 @@ class Api::V1::OrdersController < ApplicationController
 
   def create
     order = Order.new(order_params)
+    params[:items].each{ |item| order.items << Item.find(item) }
     order.user = @@user
-    order.save
-    if order.valid?
-      params[:items].each{ |item| order.items << Item.find(item) }
-      order.save
+    if order.save
       render json: { message: 'order created'}, status: :created
     else
       render json: { error: 'failed to create order' }, status: :not_acceptable
