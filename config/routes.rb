@@ -5,12 +5,15 @@ Rails.application.routes.draw do
       get '/current_order', to: 'orders#current_order'
       post '/add_item', to: 'orders#add_item'
       post '/complete_order', to: 'orders#complete_order'
+      
 
       resources :users, only: [:create]
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
 
       resources :items, only: [:index]
+
+      resources :order_items, only: [:destroy]
       
     end
   end
