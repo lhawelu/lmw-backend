@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       resources :items, only: [:index]
 
       resources :order_items, only: [:destroy]
+
+      resources :checkout, only: [:create]
+      resources :webhooks, only: [:create]
       
     end
   end
