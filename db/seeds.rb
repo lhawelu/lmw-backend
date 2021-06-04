@@ -37,12 +37,12 @@ items = [
     category: 'Tortas'
   },
   {
-    name: 'Super',
+    name: 'Super Burrito',
     price: 9.99,
     category: 'Burritos'
   },
   {
-    name: 'Regular',
+    name: 'Regular Burrito',
     price: 8.49,
     category: 'Burritos'
   },
